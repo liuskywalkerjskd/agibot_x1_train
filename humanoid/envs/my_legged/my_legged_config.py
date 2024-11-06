@@ -28,10 +28,11 @@ class MyLeggedCfg(LeggedRobotCfg):
 
 
     class asset(LeggedRobotCfg.asset):
-        file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/x1/urdf/x1.urdf'
-        xml_file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/x1/mjcf/xyber_x1_flat.xml'
-
-        name = "x1"
+        file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/my_legged/urdf/urdf.urdf'
+        #xml_file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/x1/mjcf/xyber_x1_flat.xml'
+        #用于sim2sim到mujoco
+    
+        name = "my_legged"
         foot_name = "ankle_roll"
         knee_name = "knee_pitch"
 

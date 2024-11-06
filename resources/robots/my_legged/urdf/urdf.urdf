@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/base_link.STL" />
+          filename="../meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/base_link.STL" />
+          filename="../meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R1.STL" />
+          filename="../meshes/R1.STL" />
       </geometry>
       <material
         name="">
@@ -80,12 +80,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R1.STL" />
+          filename="../meshes/R1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jr1"
+    name="right_hip_yaw_joint"
     type="revolute">
     <origin
       xyz="0 0.0815 0"
@@ -124,7 +124,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R2.STL" />
+          filename="../meshes/R2.STL" />
       </geometry>
       <material
         name="">
@@ -138,12 +138,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R2.STL" />
+          filename="../meshes/R2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jr2"
+    name="right_hip_pitch_joint"
     type="revolute">
     <origin
       xyz="0 0 0"
@@ -182,7 +182,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R3.STL" />
+          filename="../meshes/R3.STL" />
       </geometry>
       <material
         name="">
@@ -196,12 +196,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R3.STL" />
+          filename="../meshes/R3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jr3"
+    name="right_knee_pitch_joint"
     type="revolute">
     <origin
       xyz="-0.3 0 0"
@@ -240,7 +240,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R4.STL" />
+          filename="../meshes/R4.STL" />
       </geometry>
       <material
         name="">
@@ -254,12 +254,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R4.STL" />
+          filename="../meshes/R4.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jr4"
+    name="right_ankle_pitch_joint"
     type="revolute">
     <origin
       xyz="-0.311 0 0"
@@ -298,7 +298,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R5.STL" />
+          filename="../meshes/R5.STL" />
       </geometry>
       <material
         name="">
@@ -312,12 +312,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/R5.STL" />
+          filename="../meshes/R5.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jr5"
+    name="right_ankle_roll_joint"
     type="revolute">
     <origin
       xyz="0 0 0"
@@ -356,7 +356,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L1.STL" />
+          filename="../meshes/L1.STL" />
       </geometry>
       <material
         name="">
@@ -370,12 +370,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L1.STL" />
+          filename="../meshes/L1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jl1"
+    name="left_hip_yaw_joint"
     type="revolute">
     <origin
       xyz="0 -0.0785 0"
@@ -414,7 +414,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L2.STL" />
+          filename="../meshes/L2.STL" />
       </geometry>
       <material
         name="">
@@ -428,12 +428,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L2.STL" />
+          filename="../meshes/L2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jl2"
+    name="left_hip_pitch_joint"
     type="revolute">
     <origin
       xyz="0 0 0"
@@ -472,7 +472,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L3.STL" />
+          filename="../meshes/L3.STL" />
       </geometry>
       <material
         name="">
@@ -486,12 +486,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L3.STL" />
+          filename="../meshes/L3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jl3"
+    name="left_knee_pitch_joint"
     type="revolute">
     <origin
       xyz="-0.3 0 0"
@@ -530,7 +530,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L4.STL" />
+          filename="../meshes/L4.STL" />
       </geometry>
       <material
         name="">
@@ -544,12 +544,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L4.STL" />
+          filename="../meshes/L4.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jl4"
+    name="left_ankle_pitch_joint"
     type="revolute">
     <origin
       xyz="-0.311 -0.003 0"
@@ -588,7 +588,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L5.STL" />
+          filename="../meshes/L5.STL" />
       </geometry>
       <material
         name="">
@@ -602,12 +602,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://urdf/meshes/L5.STL" />
+          filename="../meshes/L5.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="jl5"
+    name="left_ankle_roll_joint"
     type="revolute">
     <origin
       xyz="0 0 0"
