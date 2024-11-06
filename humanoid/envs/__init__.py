@@ -45,3 +45,4 @@ from .my_legged.my_legged_config import MyLeggedCfg, MyLeggedCfgPPO
 from humanoid.utils.task_registry import task_registry
 
 task_registry.register( "x1_dh_stand", X1DHStandEnv, X1DHStandCfg(), X1DHStandCfgPPO() )
+task_registry.register( "my_legged", MyLeggedEnv, MyLeggedCfg(), MyLeggedCfgPPO() )
