@@ -253,15 +253,13 @@ class MyLeggedEnv(LeggedRobot):
         self.ref_dof_pos[:, 2] = -sin_pos_l * self.cfg.rewards.final_swing_joint_delta_pos[2]
         self.ref_dof_pos[:, 3] = -sin_pos_l * self.cfg.rewards.final_swing_joint_delta_pos[3]
         self.ref_dof_pos[:, 4] = -sin_pos_l * self.cfg.rewards.final_swing_joint_delta_pos[4]
-        self.ref_dof_pos[:, 5] = -sin_pos_l * self.cfg.rewards.final_swing_joint_delta_pos[5]
         # right
         sin_pos_r[sin_pos_r < 0] = 0
+        self.ref_dof_pos[:, 5] = sin_pos_r *  self.cfg.rewards.final_swing_joint_delta_pos[5]
         self.ref_dof_pos[:, 6] = sin_pos_r *  self.cfg.rewards.final_swing_joint_delta_pos[6]
         self.ref_dof_pos[:, 7] = sin_pos_r *  self.cfg.rewards.final_swing_joint_delta_pos[7]
         self.ref_dof_pos[:, 8] = sin_pos_r *  self.cfg.rewards.final_swing_joint_delta_pos[8]
         self.ref_dof_pos[:, 9] = sin_pos_r *  self.cfg.rewards.final_swing_joint_delta_pos[9]
-        self.ref_dof_pos[:, 10] = sin_pos_r * self.cfg.rewards.final_swing_joint_delta_pos[10]
-        self.ref_dof_pos[:, 11] = sin_pos_r * self.cfg.rewards.final_swing_joint_delta_pos[11]
 
         self.ref_dof_pos[torch.abs(sin_pos) < 0.1] = 0.
         
@@ -589,16 +587,17 @@ class MyLeggedEnv(LeggedRobot):
         checking the first contact with the ground after being in the air. The air time is
         limited to a maximum value for reward calculation.
         """
-        contact = self.contact_forces[:, self.feet_indices, 2] > 5.
-        stance_mask = self._get_stance_mask().clone()
-        stance_mask[torch.norm(self.commands[:, :3], dim=1) < 0.05] = 1
-        self.contact_filt = torch.logical_or(torch.logical_or(contact, stance_mask), self.last_contacts)
-        self.last_contacts = contact
-        first_contact = (self.feet_air_time > 0.) * self.contact_filt
-        self.feet_air_time += self.dt
-        air_time = self.feet_air_time.clamp(0, 0.5) * first_contact
-        self.feet_air_time *= ~self.contact_filt
-        return air_time.sum(dim=1)
+        # contact = self.contact_forces[:, self.feet_indices, 2] > 5.
+        # stance_mask = self._get_stance_mask().clone()
+        # stance_mask[torch.norm(self.commands[:, :3], dim=1) < 0.05] = 1
+        # self.contact_filt = torch.logical_or(torch.logical_or(contact, stance_mask), self.last_contacts)
+        # self.last_contacts = contact
+        # first_contact = (self.feet_air_time > 0.) * self.contact_filt
+        # self.feet_air_time += self.dt
+        #air_time = self.feet_air_time.clamp(0, 0.5) * first_contact
+        # self.feet_air_time *= ~self.contact_filt
+        #return air_time.sum(dim=1)
+        return 0
 
     def _reward_feet_contact_number(self):
         """
@@ -633,8 +632,8 @@ class MyLeggedEnv(LeggedRobot):
         on penalizing deviation in yaw and roll directions. Excludes yaw and roll from the main penalty.
         """
         joint_diff = self.dof_pos - self.default_joint_pd_target
-        left_yaw_roll = joint_diff[:, [1,2,5]]
-        right_yaw_roll = joint_diff[:, [7,8,11]]
+        left_yaw_roll = joint_diff[:, [0,4]]
+        right_yaw_roll = joint_diff[:, [5,9]]
         yaw_roll = torch.norm(left_yaw_roll, dim=1) + torch.norm(right_yaw_roll, dim=1)
         yaw_roll = torch.clamp(yaw_roll - 0.1, 0, 50)
         return torch.exp(-yaw_roll * 100) - 0.01 * torch.norm(joint_diff, dim=1)

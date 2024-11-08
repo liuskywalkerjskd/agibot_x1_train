@@ -45,7 +45,7 @@
     </collision>
   </link>
   <link
-    name="R1">
+    name="right_hip_yaw">
     <inertial>
       <origin
         xyz="2.9122E-06 0.054374 -0.010038"
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R1.STL" />
+          filename="../meshes/right_hip_yaw.STL" />
       </geometry>
       <material
         name="">
@@ -80,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R1.STL" />
+          filename="../meshes/right_hip_yaw.STL" />
       </geometry>
     </collision>
   </link>
@@ -93,7 +93,7 @@
     <parent
       link="base_link" />
     <child
-      link="R1" />
+      link="right_hip_yaw" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -103,7 +103,7 @@
       velocity="50" />
   </joint>
   <link
-    name="R2">
+    name="right_hip_pitch">
     <inertial>
       <origin
         xyz="-0.11354 -0.0015123 -1.6386E-05"
@@ -124,7 +124,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R2.STL" />
+          filename="../meshes/right_hip_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -138,7 +138,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R2.STL" />
+          filename="../meshes/right_hip_pitch.STL" />
       </geometry>
     </collision>
   </link>
@@ -149,9 +149,9 @@
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="R1" />
+      link="right_hip_yaw" />
     <child
-      link="R2" />
+      link="right_hip_pitch" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -161,7 +161,7 @@
       velocity="50" />
   </joint>
   <link
-    name="R3">
+    name="right_knee_pitch">
     <inertial>
       <origin
         xyz="-0.1367 1.3619E-06 1.9168E-08"
@@ -182,7 +182,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R3.STL" />
+          filename="../meshes/right_knee_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -196,7 +196,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R3.STL" />
+          filename="../meshes/right_knee_pitch.STL" />
       </geometry>
     </collision>
   </link>
@@ -207,9 +207,9 @@
       xyz="-0.3 0 0"
       rpy="0 0 0" />
     <parent
-      link="R2" />
+      link="right_hip_pitch" />
     <child
-      link="R3" />
+      link="right_knee_pitch" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -219,7 +219,7 @@
       velocity="50" />
   </joint>
   <link
-    name="R4">
+    name="right_ankle_pitch">
     <inertial>
       <origin
         xyz="9.9075E-11 -5.5733E-14 4.2181E-11"
@@ -240,7 +240,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R4.STL" />
+          filename="../meshes/right_ankle_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -254,7 +254,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R4.STL" />
+          filename="../meshes/right_ankle_pitch.STL" />
       </geometry>
     </collision>
   </link>
@@ -265,9 +265,9 @@
       xyz="-0.311 0 0"
       rpy="0 0 0" />
     <parent
-      link="R3" />
+      link="right_knee_pitch" />
     <child
-      link="R4" />
+      link="right_ankle_pitch" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -277,7 +277,7 @@
       velocity="50" />
   </joint>
   <link
-    name="R5">
+    name="right_ankle_roll">
     <inertial>
       <origin
         xyz="-0.031487 -5.8287E-14 0.02571"
@@ -298,7 +298,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R5.STL" />
+          filename="../meshes/right_ankle_roll.STL" />
       </geometry>
       <material
         name="">
@@ -312,7 +312,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/R5.STL" />
+          filename="../meshes/right_ankle_roll.STL" />
       </geometry>
     </collision>
   </link>
@@ -323,9 +323,9 @@
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="R4" />
+      link="right_ankle_pitch" />
     <child
-      link="R5" />
+      link="right_ankle_roll" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -335,7 +335,7 @@
       velocity="50" />
   </joint>
   <link
-    name="L1">
+    name="left_hip_yaw">
     <inertial>
       <origin
         xyz="-8.4201E-06 -0.054374 -0.010011"
@@ -356,7 +356,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L1.STL" />
+          filename="../meshes/left_hip_yaw.STL" />
       </geometry>
       <material
         name="">
@@ -370,7 +370,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L1.STL" />
+          filename="../meshes/left_hip_yaw.STL" />
       </geometry>
     </collision>
   </link>
@@ -383,7 +383,7 @@
     <parent
       link="base_link" />
     <child
-      link="L1" />
+      link="left_hip_yaw" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -393,7 +393,7 @@
       velocity="50" />
   </joint>
   <link
-    name="L2">
+    name="left_hip_pitch">
     <inertial>
       <origin
         xyz="-0.11317 -0.0014447 1.9E-05"
@@ -414,7 +414,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L2.STL" />
+          filename="../meshes/left_hip_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -428,7 +428,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L2.STL" />
+          filename="../meshes/left_hip_pitch.STL" />
       </geometry>
     </collision>
   </link>
@@ -439,9 +439,9 @@
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="L1" />
+      link="left_hip_yaw" />
     <child
-      link="L2" />
+      link="left_hip_pitch" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -451,7 +451,7 @@
       velocity="50" />
   </joint>
   <link
-    name="L3">
+    name="left_knee_pitch">
     <inertial>
       <origin
         xyz="-0.1367 -0.0029986 2.6673E-08"
@@ -472,7 +472,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L3.STL" />
+          filename="../meshes/left_knee_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -486,7 +486,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L3.STL" />
+          filename="../meshes/left_knee_pitch.STL" />
       </geometry>
     </collision>
   </link>
@@ -497,9 +497,9 @@
       xyz="-0.3 0 0"
       rpy="0 0 0" />
     <parent
-      link="L2" />
+      link="left_hip_pitch" />
     <child
-      link="L3" />
+      link="left_knee_pitch" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -509,7 +509,7 @@
       velocity="50" />
   </joint>
   <link
-    name="L4">
+    name="left_ankle_pitch">
     <inertial>
       <origin
         xyz="-3.4062E-13 -4.2577E-14 -1.3267E-13"
@@ -530,7 +530,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L4.STL" />
+          filename="../meshes/left_ankle_pitch.STL" />
       </geometry>
       <material
         name="">
@@ -544,7 +544,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L4.STL" />
+          filename="../meshes/left_ankle_pitch.STL" />
       </geometry>
     </collision>
   </link>
@@ -555,9 +555,9 @@
       xyz="-0.311 -0.003 0"
       rpy="0 0 0" />
     <parent
-      link="L3" />
+      link="left_knee_pitch" />
     <child
-      link="L4" />
+      link="left_ankle_pitch" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -567,7 +567,7 @@
       velocity="50" />
   </joint>
   <link
-    name="L5">
+    name="left_ankle_roll">
     <inertial>
       <origin
         xyz="-0.031487 -4.5131E-14 0.02571"
@@ -588,7 +588,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L5.STL" />
+          filename="../meshes/left_ankle_roll.STL" />
       </geometry>
       <material
         name="">
@@ -602,7 +602,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/L5.STL" />
+          filename="../meshes/left_ankle_roll.STL" />
       </geometry>
     </collision>
   </link>
@@ -613,9 +613,9 @@
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="L4" />
+      link="left_ankle_pitch" />
     <child
-      link="L5" />
+      link="left_ankle_roll" />
     <axis
       xyz="0 0 1" />
     <limit
