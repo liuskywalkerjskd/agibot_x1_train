@@ -407,12 +407,12 @@ class MyLeggedEnv(LeggedRobot):
         q = (self.lagged_dof_pos - self.default_dof_pos) * self.obs_scales.dof_pos
         dq = self.lagged_dof_vel * self.obs_scales.dof_vel  
 
-        # 47
+        # 41
         obs_buf = torch.cat((
             self.command_input,  # 5 = 2D(sin cos) + 3D(vel_x, vel_y, aug_vel_yaw)
-            q,    # 12
-            dq,  # 12
-            self.actions,   # 12
+            q,    # 10
+            dq,  # 10
+            self.actions,   # 10
             self.lagged_base_ang_vel * self.obs_scales.ang_vel,  # 3
             self.lagged_base_euler_xyz * self.obs_scales.quat,  # 3
         ), dim=-1)
@@ -426,6 +426,7 @@ class MyLeggedEnv(LeggedRobot):
             privileged_obs_buf = torch.cat((privileged_obs_buf.clone(), heights), dim=-1)
         
         if self.add_noise:  
+            print(obs_buf.shape)
             # add obs noise
             obs_now = obs_buf.clone() + (2 * torch.rand_like(obs_buf) -1) * self.noise_scale_vec * self.cfg.noise.noise_level
         else:

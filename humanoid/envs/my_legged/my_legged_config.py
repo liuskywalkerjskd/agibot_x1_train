@@ -2,20 +2,20 @@ from humanoid.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobotCf
 
 class MyLeggedCfg(LeggedRobotCfg):
     """
-    Configuration class for the XBotL humanoid robot.
+    Configuration class for robot.
     """
     class env(LeggedRobotCfg.env):
         # change the observation dim
         frame_stack = 66      #all histroy obs num
         short_frame_stack = 5   #short history step
         c_frame_stack = 3  #all histroy privileged obs num
-        num_single_obs = 47
+        num_single_obs = 41
         num_observations = int(frame_stack * num_single_obs)
         single_num_privileged_obs = 73
         single_linvel_index = 53
         num_privileged_obs = int(c_frame_stack * single_num_privileged_obs)
         num_actions = 10
-        num_envs = 4096
+        num_envs = 200
         episode_length_s = 24 #episode length in seconds
         use_ref_actions = False
         num_commands = 5 # sin_pos cos_pos vx vy vz
@@ -36,12 +36,12 @@ class MyLeggedCfg(LeggedRobotCfg):
         foot_name = "ankle_roll"
         knee_name = "knee_pitch"
 
-        terminate_after_contacts_on = ['base_link']
-        penalize_contacts_on = ["base_link"]
-        self_collisions = 0  # 1 to disable, 0 to enable...bitwise filter
-        flip_visual_attachments = False
-        replace_cylinder_with_capsule = False
-        fix_base_link = False
+        terminate_after_contacts_on = ['base_link'] #指定机器人中某些部件（如 base_link）触地后是否终止仿真，例如用于训练中防止不合理动作。
+        penalize_contacts_on = ["base_link"] #penalize_contacts_on: 指定机器人中哪些部件的接触会被惩罚，例如用来优化接触行为。
+        self_collisions = 0  # 1 to disable, 0 to enable...bitwise filter 自碰撞开关
+        flip_visual_attachments = False #是否反转视觉附件方向
+        replace_cylinder_with_capsule = False #是否用胶囊代替圆柱
+        fix_base_link = False #是否固定 base_link，固定后机器人无法移动。通常用于调试或需要静态测试时。
 
     class terrain(LeggedRobotCfg.terrain):
         # mesh_type = 'plane'
@@ -278,7 +278,7 @@ class MyLeggedCfg(LeggedRobotCfg):
         foot_max_dist = 1.0
 
         # final_swing_joint_pos = final_swing_joint_delta_pos + default_pos
-        final_swing_joint_delta_pos = [0.25, 0.05, -0.11, 0.35, -0.16, 0.0, -0.25, -0.05, 0.11, 0.35, -0.16, 0.0]
+        final_swing_joint_delta_pos = [0.25, -0.11, 0.35, -0.16, 0.0, -0.25, 0.11, 0.35, -0.16, 0.0]
         target_feet_height = 0.03 
         target_feet_height_max = 0.06
         feet_to_ankle_distance = 0.041
