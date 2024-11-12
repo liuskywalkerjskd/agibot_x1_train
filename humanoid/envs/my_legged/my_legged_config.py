@@ -11,7 +11,7 @@ class MyLeggedCfg(LeggedRobotCfg):
         c_frame_stack = 3  #all histroy privileged obs num
         num_single_obs = 41
         num_observations = int(frame_stack * num_single_obs)
-        single_num_privileged_obs = 73
+        single_num_privileged_obs = 65
         single_linvel_index = 53
         num_privileged_obs = int(c_frame_stack * single_num_privileged_obs)
         num_actions = 10
@@ -113,9 +113,9 @@ class MyLeggedCfg(LeggedRobotCfg):
         # PD Drive parameters:
         control_type = 'P'
 
-        stiffness = {'hip_pitch_joint': 30, 'hip_roll_joint': 40,'hip_yaw_joint': 35,
+        stiffness = {'hip_pitch_joint': 30,'hip_yaw_joint': 35,
                      'knee_pitch_joint': 100, 'ankle_pitch_joint': 35, 'ankle_roll_joint': 35}
-        damping = {'hip_pitch_joint': 3, 'hip_roll_joint': 3.0,'hip_yaw_joint': 4, 
+        damping = {'hip_pitch_joint': 3,'hip_yaw_joint': 4, 
                    'knee_pitch_joint': 10, 'ankle_pitch_joint': 0.5, 'ankle_roll_joint': 0.5}
 
         # action scale: target angle = actionScale * action + defaultAngle

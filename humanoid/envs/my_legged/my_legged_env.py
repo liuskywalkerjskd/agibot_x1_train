@@ -426,7 +426,7 @@ class MyLeggedEnv(LeggedRobot):
             privileged_obs_buf = torch.cat((privileged_obs_buf.clone(), heights), dim=-1)
         
         if self.add_noise:  
-            print(obs_buf.shape)
+            #print(obs_buf.shape)
             # add obs noise
             obs_now = obs_buf.clone() + (2 * torch.rand_like(obs_buf) -1) * self.noise_scale_vec * self.cfg.noise.noise_level
         else:
