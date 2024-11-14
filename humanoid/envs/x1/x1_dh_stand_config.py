@@ -29,7 +29,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Copyright (c) 2024, AgiBot Inc. All rights reserved.
-
+    
 from humanoid.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobotCfgPPO
 
 class X1DHStandCfg(LeggedRobotCfg):

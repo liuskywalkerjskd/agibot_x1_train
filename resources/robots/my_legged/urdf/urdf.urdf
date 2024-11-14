@@ -23,7 +23,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 -1.5708 0" />
       <geometry>
         <mesh
           filename="../meshes/base_link.STL" />
@@ -89,7 +89,7 @@
     type="revolute">
     <origin
       xyz="0 0.0815 0"
-      rpy="0 0 0" />
+      rpy="0 -1.57 0" />
     <parent
       link="base_link" />
     <child
@@ -353,7 +353,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 -1.5708 0" />
       <geometry>
         <mesh
           filename="../meshes/left_hip_yaw.STL" />
@@ -385,7 +385,7 @@
     <child
       link="left_hip_yaw" />
     <axis
-      xyz="0 0 1" />
+      xyz="1 0 0" />
     <limit
       lower="-2"
       upper="2"
@@ -437,7 +437,7 @@
     type="revolute">
     <origin
       xyz="0 0 0"
-      rpy="0 0 0" />
+      rpy="0 -1.5708 0" />
     <parent
       link="left_hip_yaw" />
     <child
