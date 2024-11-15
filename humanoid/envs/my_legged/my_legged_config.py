@@ -95,16 +95,16 @@ class MyLeggedCfg(LeggedRobotCfg):
         pos = [0.0, 0.0, 0.7]
 
         default_joint_angles = {  # = target angles [rad] when action = 0.0
-            'left_hip_pitch_joint': 0.4,
-            'left_hip_roll_joint': 0.05,
-            'left_knee_pitch_joint': 0.49,
-            'left_ankle_pitch_joint': -0.21,
-            'left_ankle_roll_joint': 0.0,
-            'right_hip_pitch_joint': -0.4,
-            'right_hip_roll_joint': -0.05,
-            'right_knee_pitch_joint': 0.49,
-            'right_ankle_pitch_joint': -0.21, 
-            'right_ankle_roll_joint': 0.0,
+            'left_hip_pitch_joint': 0,
+            'left_hip_roll_joint': 0,
+            'left_knee_pitch_joint': 0,
+            'left_ankle_pitch_joint': 0,
+            'left_ankle_roll_joint': 0,
+            'right_hip_pitch_joint': 0,
+            'right_hip_roll_joint': 0,
+            'right_knee_pitch_joint': 0,
+            'right_ankle_pitch_joint': 0, 
+            'right_ankle_roll_joint': 0,
         }
 
     class control(LeggedRobotCfg.control):
