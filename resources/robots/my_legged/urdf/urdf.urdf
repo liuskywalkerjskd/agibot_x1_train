@@ -45,7 +45,7 @@
     </collision>
   </link>
   <link
-    name="right_hip_yaw">
+    name="right_hip_roll">
     <inertial>
       <origin
         xyz="2.9122E-06 0.054374 -0.010038"
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_hip_yaw.STL" />
+          filename="../meshes/right_hip_roll.STL" />
       </geometry>
       <material
         name="">
@@ -80,12 +80,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_hip_yaw.STL" />
+          filename="../meshes/right_hip_roll.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="right_hip_yaw_joint"
+    name="right_hip_roll_joint"
     type="revolute">
     <origin
       xyz="0 0.0815 0"
@@ -93,7 +93,7 @@
     <parent
       link="base_link" />
     <child
-      link="right_hip_yaw" />
+      link="right_hip_roll" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -149,7 +149,7 @@
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="right_hip_yaw" />
+      link="right_hip_roll" />
     <child
       link="right_hip_pitch" />
     <axis
@@ -335,7 +335,7 @@
       velocity="50" />
   </joint>
   <link
-    name="left_hip_yaw">
+    name="left_hip_roll">
     <inertial>
       <origin
         xyz="-8.4201E-06 -0.054374 -0.010011"
@@ -356,7 +356,7 @@
         rpy="0 -1.5708 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hip_yaw.STL" />
+          filename="../meshes/left_hip_roll.STL" />
       </geometry>
       <material
         name="">
@@ -370,12 +370,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hip_yaw.STL" />
+          filename="../meshes/left_hip_roll.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="left_hip_yaw_joint"
+    name="left_hip_roll_joint"
     type="revolute">
     <origin
       xyz="0 -0.0785 0"
@@ -383,7 +383,7 @@
     <parent
       link="base_link" />
     <child
-      link="left_hip_yaw" />
+      link="left_hip_roll" />
     <axis
       xyz="1 0 0" />
     <limit
@@ -439,7 +439,7 @@
       xyz="0 0 0"
       rpy="0 -1.5708 0" />
     <parent
-      link="left_hip_yaw" />
+      link="left_hip_roll" />
     <child
       link="left_hip_pitch" />
     <axis

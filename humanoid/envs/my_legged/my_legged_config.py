@@ -97,13 +97,11 @@ class MyLeggedCfg(LeggedRobotCfg):
         default_joint_angles = {  # = target angles [rad] when action = 0.0
             'left_hip_pitch_joint': 0.4,
             'left_hip_roll_joint': 0.05,
-            'left_hip_yaw_joint': -0.31,
             'left_knee_pitch_joint': 0.49,
             'left_ankle_pitch_joint': -0.21,
             'left_ankle_roll_joint': 0.0,
             'right_hip_pitch_joint': -0.4,
             'right_hip_roll_joint': -0.05,
-            'right_hip_yaw_joint': 0.31,
             'right_knee_pitch_joint': 0.49,
             'right_ankle_pitch_joint': -0.21, 
             'right_ankle_roll_joint': 0.0,
@@ -113,9 +111,9 @@ class MyLeggedCfg(LeggedRobotCfg):
         # PD Drive parameters:
         control_type = 'P'
 
-        stiffness = {'hip_pitch_joint': 30,'hip_yaw_joint': 35,
+        stiffness = {'hip_pitch_joint': 30,'hip_roll_joint': 35,
                      'knee_pitch_joint': 100, 'ankle_pitch_joint': 35, 'ankle_roll_joint': 35}
-        damping = {'hip_pitch_joint': 3,'hip_yaw_joint': 4, 
+        damping = {'hip_pitch_joint': 3,'hip_roll_joint': 4, 
                    'knee_pitch_joint': 10, 'ankle_pitch_joint': 0.5, 'ankle_roll_joint': 0.5}
 
         # action scale: target angle = actionScale * action + defaultAngle
