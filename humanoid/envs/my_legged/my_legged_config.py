@@ -79,20 +79,20 @@ class MyLeggedCfg(LeggedRobotCfg):
 
     class noise(LeggedRobotCfg.noise):
         add_noise = True
-        noise_level = 1.5    # scales other values
+        noise_level = 1.0    # scales other values
 
         class noise_scales(LeggedRobotCfg.noise.noise_scales):
-            dof_pos = 0.02
-            dof_vel = 1.5 
-            ang_vel = 0.2   
+            dof_pos = 0.01
+            dof_vel = 1.0 
+            ang_vel = 0.1   
             lin_vel = 0.1   
             quat = 0.1
             gravity = 0.05
-            height_measurements = 0.1
+            height_measurements = 0.05
 
 
     class init_state(LeggedRobotCfg.init_state):
-        pos = [0.0, 0.0, 0.7]
+        pos = [0.0, 0.0, 0.6]
 
         default_joint_angles = {  # = target angles [rad] when action = 0.0
             'left_hip_pitch_joint': 0,
@@ -117,7 +117,7 @@ class MyLeggedCfg(LeggedRobotCfg):
                    'knee_pitch_joint': 10, 'ankle_pitch_joint': 0.5, 'ankle_roll_joint': 0.5}
 
         # action scale: target angle = actionScale * action + defaultAngle
-        action_scale = 0.5
+        action_scale = 0.2
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 10  # 50hz 100hz
 
@@ -278,7 +278,7 @@ class MyLeggedCfg(LeggedRobotCfg):
         # final_swing_joint_pos = final_swing_joint_delta_pos + default_pos
         final_swing_joint_delta_pos = [0.25, -0.11, 0.35, -0.16, 0.0, -0.25, 0.11, 0.35, -0.16, 0.0]
         target_feet_height = 0.03 
-        target_feet_height_max = 0.06
+        target_feet_height_max = 0.2
         feet_to_ankle_distance = 0.041
         cycle_time = 0.7
         # if true negative total rewards are clipped at zero (avoids early termination problems)

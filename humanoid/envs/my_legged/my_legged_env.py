@@ -46,7 +46,7 @@ def get_euler_xyz_tensor(quat):
 
 class MyLeggedEnv(LeggedRobot):
     '''
-    X1DHStandEnv is a class that represents a custom environment for a legged robot.
+    a class that represents a custom environment for a legged robot.
 
     Args:
         cfg (LeggedRobotCfg): Configuration object for the legged robot.
@@ -337,13 +337,13 @@ class MyLeggedEnv(LeggedRobot):
         
         # critic no lag
         diff = self.dof_pos - self.ref_dof_pos
-        # 73
+        # 65
         privileged_obs_buf = torch.cat((
             self.command_input,  # 2 + 3
-            (self.dof_pos - self.default_joint_pd_target) * self.obs_scales.dof_pos,  # 12
-            self.dof_vel * self.obs_scales.dof_vel,  # 12
-            self.actions,  # 12
-            diff,  # 12
+            (self.dof_pos - self.default_joint_pd_target) * self.obs_scales.dof_pos,  # 10
+            self.dof_vel * self.obs_scales.dof_vel,  # 10
+            self.actions,  # 10
+            diff,  # 10
             self.base_lin_vel * self.obs_scales.lin_vel,  # 3
             self.base_ang_vel * self.obs_scales.ang_vel,  # 3
             self.base_euler_xyz * self.obs_scales.quat,  # 3
@@ -417,7 +417,7 @@ class MyLeggedEnv(LeggedRobot):
             self.lagged_base_euler_xyz * self.obs_scales.quat,  # 3
         ), dim=-1)
 
-        if self.cfg.env.num_single_obs == 48:
+        if self.cfg.env.num_single_obs == 42:
             stand_command = (torch.norm(self.commands[:, :3], dim=1, keepdim=True) <= self.cfg.commands.stand_com_threshold)
             obs_buf = torch.cat((obs_buf, stand_command),dim=1)
             
