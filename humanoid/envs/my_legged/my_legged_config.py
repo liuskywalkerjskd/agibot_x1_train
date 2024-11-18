@@ -15,7 +15,7 @@ class MyLeggedCfg(LeggedRobotCfg):
         single_linvel_index = 53
         num_privileged_obs = int(c_frame_stack * single_num_privileged_obs)
         num_actions = 10
-        num_envs = 200
+        num_envs = 4096
         episode_length_s = 24 #episode length in seconds
         use_ref_actions = False
         num_commands = 5 # sin_pos cos_pos vx vy vz
@@ -38,7 +38,7 @@ class MyLeggedCfg(LeggedRobotCfg):
 
         terminate_after_contacts_on = ['base_link'] #指定机器人中某些部件（如 base_link）触地后是否终止仿真，例如用于训练中防止不合理动作。
         penalize_contacts_on = ["base_link"] #penalize_contacts_on: 指定机器人中哪些部件的接触会被惩罚，例如用来优化接触行为。
-        self_collisions = 0  # 1 to disable, 0 to enable...bitwise filter 自碰撞开关
+        self_collisions = 1  # 1 to disable, 0 to enable...bitwise filter 自碰撞开关
         flip_visual_attachments = False #是否反转视觉附件方向
         replace_cylinder_with_capsule = False #是否用胶囊代替圆柱
         fix_base_link = False #是否固定 base_link，固定后机器人无法移动。通常用于调试或需要静态测试时。
@@ -92,7 +92,7 @@ class MyLeggedCfg(LeggedRobotCfg):
 
 
     class init_state(LeggedRobotCfg.init_state):
-        pos = [0.0, 0.0, 0.6]
+        pos = [0.0, 0.0, 0.7]
 
         default_joint_angles = {  # = target angles [rad] when action = 0.0
             'left_hip_pitch_joint': 0,
@@ -216,13 +216,13 @@ class MyLeggedCfg(LeggedRobotCfg):
         joint_9_armature_range = [0.0001, 0.05]
         joint_10_armature_range = [0.0001, 0.05]
 
-        add_lag = True
-        randomize_lag_timesteps = True
+        add_lag = False
+        randomize_lag_timesteps = False
         randomize_lag_timesteps_perstep = False
         lag_timesteps_range = [5, 40]
         
-        add_dof_lag = True
-        randomize_dof_lag_timesteps = True
+        add_dof_lag = False
+        randomize_dof_lag_timesteps = False
         randomize_dof_lag_timesteps_perstep = False
         dof_lag_timesteps_range = [0, 40]
         
@@ -235,11 +235,11 @@ class MyLeggedCfg(LeggedRobotCfg):
         dof_vel_lag_timesteps_range = [7, 25]
         
         add_imu_lag = False
-        randomize_imu_lag_timesteps = True
+        randomize_imu_lag_timesteps = False
         randomize_imu_lag_timesteps_perstep = False
         imu_lag_timesteps_range = [1, 10]
         
-        randomize_coulomb_friction = True
+        randomize_coulomb_friction = False
         joint_coulomb_range = [0.1, 0.9]
         joint_viscous_range = [0.05, 0.1]
         
@@ -367,7 +367,7 @@ class MyLeggedCfgPPO(LeggedRobotCfgPPO):
         policy_class_name = 'ActorCriticDH'
         algorithm_class_name = 'DHPPO'
         num_steps_per_env = 24  # per iteration
-        max_iterations = 200  # number of policy updates
+        max_iterations = 20000  # number of policy updates
 
         # logging
         save_interval = 100  # check for potential saves every this many iterations

@@ -47,7 +47,7 @@ class X1DHStandCfg(LeggedRobotCfg):
         single_linvel_index = 53
         num_privileged_obs = int(c_frame_stack * single_num_privileged_obs)
         num_actions = 12
-        num_envs = 200
+        num_envs = 50
         episode_length_s = 24 #episode length in seconds
         use_ref_actions = False
         num_commands = 5 # sin_pos cos_pos vx vy vz
